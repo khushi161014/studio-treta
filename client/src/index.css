@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --treta-bg: #F5F5F0;
+  --treta-text: #2d2d2d;
+  --treta-heading: #1a1a1a;
+  /* Studio Treta Palette */
+  /* Ivory/White */
+  --background: 40 20% 98%; 
+  /* Black/Dark */
+  --foreground: 220 10% 10%;
+  
+  /* Navy Blue - Primary */
+  --primary: 220 30% 25%;
+  --primary-foreground: 40 20% 98%;
+  
+  /* Forest Green - Secondary/Accent */
+  --secondary: 150 20% 25%;
+  --secondary-foreground: 40 20% 98%;
+
+  /* Muted tones for depth */
+  --muted: 220 10% 94%;
+  --muted-foreground: 220 10% 40%;
+  
+  --accent: 40 10% 90%;
+  --accent-foreground: 220 10% 10%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 220 10% 85%;
+  --input: 220 10% 85%;
+  --ring: 220 30% 25%;
+
+  --radius: 0px; /* Sharp edges for structure */
+
+  --font-sans: 'DM Sans', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply tracking-wide font-medium;
+  }
+}
+
+/* Custom utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.clip-image {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clip-image:hover {
+  clip-path: inset(10px 10px 10px 10px);
+}
